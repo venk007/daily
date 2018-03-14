@@ -25,6 +25,13 @@ public class School implements Cloneable {
         this.address = address;
     }
 
+    /**
+     * 静态工厂方法代替构造器
+     */
+    public static School getInstance() {
+        return new School();
+    }
+
     public School() {
     }
 

@@ -5,10 +5,29 @@ import java.util.Objects;
 
 public class Student implements Cloneable {
 
+    /**
+     * 姓名
+     */
     private String name;
 
+    /**
+     * 年龄
+     */
     private int age;
 
+    /**
+     * 性别
+     */
+    private String sex;
+
+    /**
+     * 年级
+     */
+    private String grade;
+
+    /**
+     * 学校
+     */
     private School school;
 
     public String getName() {
@@ -35,12 +54,47 @@ public class Student implements Cloneable {
         this.school = school;
     }
 
-    public Student() {
+    /**
+     * 使用构建器构造多参数对象
+     */
+    public static class Builder {
+        private String name;
+        private int age;
+        private String sex = "";
+        private String grade = "";
+        private School school;
+
+        public Builder(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public Builder sex(String sex) {
+            this.sex = sex;
+            return this;
+        }
+
+        public Builder grade(String grade) {
+            this.grade = grade;
+            return this;
+        }
+
+        public Builder school(School school) {
+            this.school = school;
+            return this;
+        }
+
+        public Student build() {
+            return new Student(this);
+        }
     }
 
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
+    private Student(Builder builder) {
+        this.age = builder.age;
+        this.name = builder.name;
+        this.sex = builder.sex;
+        this.grade = builder.grade;
+        this.school = builder.school;
     }
 
     @Override
@@ -58,6 +112,11 @@ public class Student implements Cloneable {
         return Objects.hash(name, age, school);
     }
 
+    /**
+     * 深拷贝(将组合对象同样拷贝)
+     * @return
+     * @throws CloneNotSupportedException
+     */
     @Override
     protected Object clone() throws CloneNotSupportedException {
         Student student = (Student) super.clone();
@@ -66,28 +125,33 @@ public class Student implements Cloneable {
     }
 
     /**
-     * 深克隆demo
+     * 深克隆测试demo
      * Cloneable接口无方法，clone方法来自Object类，修饰符是protected native。
      * Cloneable接口因与Object类处于同一个包下，所以能继承clone方法，继承Cloneable接口成为它的子类同样也就继承了clone方法
      * native：一个Native Method是一个java调用非java代码的接口，该方法的实现由非java语言实现，比如C。
      * @param args
      */
     public static void main(String[] args) {
-        School xaufe = new School("XAUFE", "Xi'an");
-        Student stu1 = new Student("O0O", 20);
-        stu1.setSchool(xaufe);
-        Student stu2 = stu1;
-        System.out.println(stu1.hashCode() == stu2.hashCode());
-        System.out.println(stu1.equals(stu2));
-        System.out.println(stu1 == stu2);
-        System.out.println(stu1.school == stu2.school);
+        //School xaufe = new School("XAUFE", "Xi'an");
+        School xaufe = School.getInstance();
+        xaufe.setName("XAUFE");
+        xaufe.setAddress("Xi'an");
+
+        Student lee = new Builder("lee", 20).school(xaufe).build();
+        Student leeSame = lee;
+        System.out.println(lee.hashCode() == leeSame.hashCode()); // true
+        System.out.println(lee.equals(leeSame)); // true
+        System.out.println(lee == leeSame); // true
+        System.out.println(lee.school.equals(leeSame.school)); // true
+        System.out.println(lee.school == leeSame.school); // true
         System.out.println("------");
         try {
-            Student stu3 = (Student) stu1.clone();
-            System.out.println(stu1.hashCode() == stu3.hashCode());
-            System.out.println(stu1.equals(stu3));
-            System.out.println(stu1 == stu3);
-            System.out.println(stu1.school == stu3.school);
+            Student leeClone = (Student) lee.clone();
+            System.out.println(lee.hashCode() == leeClone.hashCode()); // true
+            System.out.println(lee.equals(leeClone)); // true
+            System.out.println(lee == leeClone); // false
+            System.out.println(lee.school.equals(leeClone.school)); // true
+            System.out.println(lee.school == leeClone.school); // false
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
