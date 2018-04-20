@@ -3,7 +3,7 @@ package com.venk.daily.book.talkDesignPattern.factory;
 /**
  * All rights Reserved, Designed By Venk.
  *
- * @Description:简单工厂模式-减法
+ * @Description:简单工厂模式-除法
  * @author:Venk[liwenkeq@sina.com]
  * @date:2018/4/21 00:02
  * @version:V1.0
