@@ -23,4 +23,5 @@ public class Divide extends Algorithm {
         }
         return result;
     }
+
 }
