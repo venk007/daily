@@ -40,7 +40,6 @@ public class AlgorithmFactory {
         if (Objects.isNull(algo)) {
             return;
         }
-
         algo.setNumA(numberA);
         algo.setNumB(numberB);
         try {
