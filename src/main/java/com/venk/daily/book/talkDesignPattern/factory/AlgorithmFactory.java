@@ -36,7 +36,6 @@ public class AlgorithmFactory {
         double numberB = 2d;
         String symbol = "+";
 
-        System.out.println("halo");
         Algorithm algo = getAlgorithm(symbol);
         if (Objects.isNull(algo)) {
             return;
