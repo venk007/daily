@@ -1,8 +1,15 @@
 package com.venk.daily.src.web.domain;
 
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Objects;
 
+@Slf4j
+@Getter
+@Setter
 public class Student implements Cloneable {
 
     /**
@@ -114,6 +121,7 @@ public class Student implements Cloneable {
 
     /**
      * 深拷贝(将组合对象同样拷贝)
+     *
      * @return
      * @throws CloneNotSupportedException
      */
@@ -129,6 +137,7 @@ public class Student implements Cloneable {
      * Cloneable接口无方法，clone方法来自Object类，修饰符是protected native。
      * Cloneable接口因与Object类处于同一个包下，所以能继承clone方法，继承Cloneable接口成为它的子类同样也就继承了clone方法
      * native：一个Native Method是一个java调用非java代码的接口，该方法的实现由非java语言实现，比如C。
+     *
      * @param args
      */
     public static void main(String[] args) {
@@ -138,21 +147,23 @@ public class Student implements Cloneable {
         xaufe.setAddress("Xi'an");
 
         Student lee = new Builder("lee", 20).school(xaufe).build();
+        log.info("---地址引用---");
         Student leeSame = lee;
-        System.out.println(lee.hashCode() == leeSame.hashCode()); // true
-        System.out.println(lee.equals(leeSame)); // true
-        System.out.println(lee == leeSame); // true
-        System.out.println(lee.school.equals(leeSame.school)); // true
-        System.out.println(lee.school == leeSame.school); // true
-        System.out.println("------");
+        log.info("lee.hashCode() == leeSame.hashCode(): {}", lee.hashCode() == leeSame.hashCode()); // true
+        log.info("lee.equals(leeSame): {}", lee.equals(leeSame)); // true
+        log.info("lee == leeSame: {}", lee == leeSame); // true
+        log.info("lee.school.equals(leeSame.school): {}", lee.school.equals(leeSame.school)); // true
+        log.info("lee.school == leeSame.school: {}", lee.school == leeSame.school); // true
         try {
+            log.info("---对象克隆---");
             Student leeClone = (Student) lee.clone();
-            System.out.println(lee.hashCode() == leeClone.hashCode()); // true
-            System.out.println(lee.equals(leeClone)); // true
-            System.out.println(lee == leeClone); // false
-            System.out.println(lee.school.equals(leeClone.school)); // true
-            System.out.println(lee.school == leeClone.school); // false
+            log.info("lee.hashCode() == leeClone.hashCode(): {}", lee.hashCode() == leeClone.hashCode()); // true
+            log.info("lee.equals(leeClone): {}", lee.equals(leeClone)); // true
+            log.info("lee == leeClone: {}", lee == leeClone); // false
+            log.info("lee.school.equals(leeClone.school): {}", lee.school.equals(leeClone.school)); // true
+            log.info("lee.school == leeClone.school: {}", lee.school == leeClone.school); // false
         } catch (CloneNotSupportedException e) {
+            log.error("CloneNotSupportedException!", e);
             e.printStackTrace();
         }
     }

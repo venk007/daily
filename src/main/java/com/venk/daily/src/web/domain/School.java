@@ -1,29 +1,18 @@
 package com.venk.daily.src.web.domain;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Objects;
 
+@Getter
+@Setter
 public class School implements Cloneable {
 
     private String name;
 
     private String address;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     /**
      * 静态工厂方法代替构造器

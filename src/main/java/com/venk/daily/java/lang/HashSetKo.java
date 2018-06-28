@@ -1,4 +1,4 @@
-package com.venk.daily.java;
+package com.venk.daily.java.lang;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -29,4 +29,5 @@ public class HashSetKo {
         }
         System.out.println(strSet);
     }
+
 }

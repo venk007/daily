@@ -1,4 +1,4 @@
-package com.venk.daily.leetCode.algorithms;
+package com.venk.daily.leetcode.algorithms;
 
 /**
  * 12. Integer to Roman
@@ -123,4 +123,5 @@ public class IntToRoman {
         intToRoman(4); //IV
         */
     }
+
 }

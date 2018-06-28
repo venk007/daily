@@ -1,4 +1,4 @@
-package com.venk.daily.leetCode.algorithms;
+package com.venk.daily.leetcode.algorithms;
 
 public class SearchInsertPosition {
 
@@ -30,4 +30,5 @@ public class SearchInsertPosition {
         int result = searchInsert(nums, 2);
         System.out.println("result:" + result);
     }
+
 }

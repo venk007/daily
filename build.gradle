@@ -1,40 +1,29 @@
-buildscript {
-	ext {
-		springBootVersion = '1.5.7.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
-}
+group = 'com.venk'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = 1.8
 
 apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 apply plugin: 'idea'
+apply plugin: "io.franzbecker.gradle-lombok"
 
-group = 'com.venk'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-
-repositories {
-	mavenCentral()
-}
-
-configurations {
-	providedRuntime
+buildscript {
+    ext {
+        springBootVersion = '1.5.7.RELEASE'
+    }
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "io.franzbecker:gradle-lombok:1.14"
+    }
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	//compile('org.apache.commons:commons-lang3-3.6')
-	/**
-	 * 屏蔽tomcat，修复启动后自动shut down的问题
-	 * 参考url:http://blog.csdn.net/sun20100912/article/details/52013463
-	 */
-	//providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
