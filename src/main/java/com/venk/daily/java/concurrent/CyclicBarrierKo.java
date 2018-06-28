@@ -86,6 +86,7 @@ public class CyclicBarrierKo {
     private static void sleep() {
         try {
             Thread.sleep(3000);
+            log.info("");
         } catch (InterruptedException e) {
             log.error("InterruptedException!", e);
         }

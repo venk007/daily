@@ -30,8 +30,6 @@ public class CountDownLatchKo {
             public void run() {
                 dealSomething(latch);
             }
-
-            ;
         }.start();
 
         // 子线程2
@@ -39,8 +37,6 @@ public class CountDownLatchKo {
             public void run() {
                 dealSomething(latch);
             }
-
-            ;
         }.start();
 
         try {
