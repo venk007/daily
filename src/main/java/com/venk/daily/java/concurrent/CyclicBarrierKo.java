@@ -32,7 +32,7 @@ public class CyclicBarrierKo {
 
         sleep();
         log.info("========= 执行带Runnable参数的CyclicBarrier =========");
-        log.info("\n====================================\n在所有线程写入操作完之后\n进行额外的其他操作可以为CyclicBarrier提供Runnable参数\n当所有的线程都到达barrier状态后\n会从所有的线程中选择一个线程去执行Runnable\n====================================");
+        log.info("\n====================================\n在所有线程写入操作完之后\n进行额外的其他操作可以为CyclicBarrier提供Runnable参数\n当所有的线程都到达barrier状态后\n最后一个到达的barrier的线程去执行Runnable\n====================================");
         CyclicBarrier barrierWithTask = new CyclicBarrier(threadNum, new Runnable() {
             @Override
             public void run() {
