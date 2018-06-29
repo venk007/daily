@@ -25,7 +25,7 @@ public class SemaphoreKo {
          * 初始化机器数目
          */
         Semaphore semaphore = new Semaphore(5);
-        for (int i = 0; i < wokerNum; i++) {
+        for (int i = 1; i <= wokerNum; i++) {
             new Worker(i, semaphore).start();
         }
     }
@@ -45,7 +45,7 @@ public class SemaphoreKo {
                 semaphore.acquire();
                 log.info("工人 {} 占用一个机器...", this.num);
                 Thread.sleep(1000);
-                log.info("工人 {} 释放一个机器", this.num);
+                log.info("工人|{}|释放一个机器", this.num);
                 semaphore.release();
             } catch (InterruptedException e) {
                 e.printStackTrace();
