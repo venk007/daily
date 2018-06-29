@@ -30,6 +30,9 @@ class HelloGroovy {
         then:
         println("groovy id is ${helloGroovy.getId()}")
         println("now id is ${id}")
+        expect:
+        id == 100000
+        helloGroovy.getId() == 99999
     }
 
 }

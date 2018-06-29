@@ -3,6 +3,9 @@ package com.venk.daily.java.concurrent;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+
+import static java.util.concurrent.Executors.newFixedThreadPool;
 
 /**
  * All rights Reserved, Designed By Venk.
@@ -22,23 +25,14 @@ import java.util.concurrent.CountDownLatch;
 @Slf4j
 public class CountDownLatchKo {
     public static void main(String[] args) {
-        // 参数count为计数值
+        // 创建闭锁类CountDownLatch，并设置计数值为2
         final CountDownLatch latch = new CountDownLatch(2);
-
+        // 创建线程池
+        ExecutorService fixedThreadPool = newFixedThreadPool(2);
         // 子线程1
-        new Thread() {
-            public void run() {
-                dealSomething(latch);
-            }
-        }.start();
-
+        doThread(latch, fixedThreadPool);
         // 子线程2
-        new Thread() {
-            public void run() {
-                dealSomething(latch);
-            }
-        }.start();
-
+        doThread(latch, fixedThreadPool);
         try {
             log.info("等待2个子线程执行完毕...");
             latch.await();
@@ -50,6 +44,26 @@ public class CountDownLatchKo {
 
     }
 
+    /**
+     * 使用线程池中的子线程调用业务逻辑
+     *
+     * @param latch
+     * @param fixedThreadPool
+     */
+    private static void doThread(CountDownLatch latch, ExecutorService fixedThreadPool) {
+        fixedThreadPool.execute(new Runnable() {
+            @Override
+            public void run() {
+                dealSomething(latch);
+            }
+        });
+    }
+
+    /**
+     * 业务处理逻辑
+     *
+     * @param latch
+     */
     private static void dealSomething(CountDownLatch latch) {
         try {
             log.info("子线程 {} 正在执行", Thread.currentThread().getName());
