@@ -12,4 +12,5 @@ public class DailyApplication {
         SpringApplication.run(DailyApplication.class, args);
         log.info("Halo Venk！");
     }
+
 }
