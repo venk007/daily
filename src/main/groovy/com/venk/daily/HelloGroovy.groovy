@@ -1,4 +1,4 @@
-package com.venk.daily.groovy
+package com.venk.daily
 
 /**
  * Groovy's Hello World
