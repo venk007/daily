@@ -1,4 +1,4 @@
-package com.venk.daily.book.talkDesignPattern.factory;
+package com.venk.daily.book.talkdesignpattern.factory;
 
 import java.util.Objects;
 
@@ -14,19 +14,18 @@ import java.util.Objects;
 public class AlgorithmFactory {
 
     public static Algorithm getAlgorithm(String symbol) {
-
-        switch (symbol) {
-            case "+":
-                return new Add();
-            case "-":
-                return new Subtract();
-            case "*":
-                return new Multiply();
-            case "/":
+        AlgorithmType algorithmType = AlgorithmType.getByCode(symbol);
+        switch (algorithmType) {
+            case ADD:
+                return new com.venk.daily.book.talkdesignpattern.factory.Add();
+            case SUBTRACT:
+                return new com.venk.daily.book.talkdesignpattern.factory.Subtract();
+            case MULTIPLY:
+                return new com.venk.daily.book.talkdesignpattern.factory.Multiply();
+            case DIVIDE:
                 return new Divide();
             default:
-                System.out.println("运算符号错误，请重新输入!");
-                return null;
+                throw new IllegalArgumentException("运算符输入错误");
         }
     }
 
@@ -48,4 +47,5 @@ public class AlgorithmFactory {
             return;
         }
     }
+
 }

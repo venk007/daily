@@ -21,6 +21,15 @@ group = 'com.venk'
 version = '1.0.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
+sourceSets {
+    main {
+        java.srcDirs = ['src/main']
+    }
+    test {
+        java.srcDirs = ['src/test']
+    }
+}
+
 repositories {
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
@@ -34,6 +43,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.apache.commons:commons-lang3:3.7'
+    implementation 'com.google.guava:guava:21.0'
     implementation 'org.codehaus.groovy:groovy-all:2.5.0'
     annotationProcessor 'org.projectlombok:lombok'
     compileOnly 'org.projectlombok:lombok'

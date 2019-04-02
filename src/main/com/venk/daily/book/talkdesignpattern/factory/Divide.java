@@ -1,4 +1,4 @@
-package com.venk.daily.book.talkDesignPattern.factory;
+package com.venk.daily.book.talkdesignpattern.factory;
 
 /**
  * All rights Reserved, Designed By Venk.
