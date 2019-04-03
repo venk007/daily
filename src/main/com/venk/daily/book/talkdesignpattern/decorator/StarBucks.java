@@ -4,7 +4,7 @@ package com.venk.daily.book.talkdesignpattern.decorator;
  * 咖啡店
  * 客户端
  *
- * @Author: liwenke[liwenke@ldxinyong.com]
+ * @Author: venk[liwenke007@gmail.com]
  * @Date: 2019-04-03 17:27
  */
 public class StarBucks {

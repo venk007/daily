@@ -4,7 +4,7 @@ package com.venk.daily.book.talkdesignpattern.decorator;
  * 加可可
  * 具体装饰类
  *
- * @Author: liwenke[liwenke@ldxinyong.com]
+ * @Author: venk[liwenke007@gmail.com]
  * @Date: 2019-04-03 17:54
  */
 public class AddCocoa extends Step {
