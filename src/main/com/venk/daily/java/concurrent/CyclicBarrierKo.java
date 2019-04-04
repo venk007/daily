@@ -7,11 +7,11 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * All rights Reserved, Designed By Venk.
+ * <p>
+ * 栅栏CyclicBarrier
  *
- * @Description: 栅栏CyclicBarrier
- * @author: Venk[liwenkeq@sina.com]
- * @date: 2018/6/28 14:29
- * @version: V1.0
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2018/6/28 14:29
  * @url: http://www.importnew.com/21889.html
  * @Copyright ©2018 Venk. All rights reserved.
  */

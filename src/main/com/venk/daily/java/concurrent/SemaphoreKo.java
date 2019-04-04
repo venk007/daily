@@ -8,10 +8,10 @@ import java.util.concurrent.Semaphore;
  * All rights Reserved, Designed By Venk.
  * 信号量Semaphore用来控制某个资源可被同时访问的个数
  * 可以理解为 线程池提高并发量，而信号量控制并发量
- * @Description: 信号量Semaphore
- * @author: Venk[liwenkeq@sina.com]
- * @date: 2018/6/28 16:13
- * @version: V1.0
+ * 信号量Semaphore
+ *
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2018/6/28 16:13
  * @Copyright ©2018 Venk. All rights reserved.
  */
 @Slf4j

@@ -9,11 +9,11 @@ import static java.util.concurrent.Executors.newFixedThreadPool;
 
 /**
  * All rights Reserved, Designed By Venk.
+ * <p>
+ * 使用线程池进行递归压缩
  *
- * @Description: 使用线程池进行递归压缩
- * @author: Venk[liwenkeq@sina.com]
- * @date: 2018/8/16 15:53
- * @version: V1.0
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2018/8/16 15:53
  * @Copyright ©2018 Venk. All rights reserved.
  */
 @Slf4j

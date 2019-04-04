@@ -8,10 +8,10 @@ import java.util.EnumSet;
 import java.util.Map;
 
 /**
- * Description:
+ * 运算符枚举
  *
- * @Author: Venk[liwenkeq@sina.com]
- * @Date: 2019-04-02 18:38
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2019-04-02 18:38
  */
 @Getter
 @AllArgsConstructor

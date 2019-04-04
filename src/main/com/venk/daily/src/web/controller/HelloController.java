@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * All rights Reserved, Designed By Liwenke.
  *
- * @author:liwenke[liwenke007@gmail.com]
- * @date:2017/9/29 17:51
+ * @authorliwenke[liwenke007@gmail.com]
+ * @date 2017/9/29 17:51
  */
 @Slf4j
 @Controller

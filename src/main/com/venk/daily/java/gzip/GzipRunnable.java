@@ -7,11 +7,11 @@ import java.util.zip.GZIPOutputStream;
 
 /**
  * All rights Reserved, Designed By Venk.
+ * <p>
+ * 单文件压缩
  *
- * @Description: 单文件压缩
- * @author: Venk[liwenkeq@sina.com]
- * @date: 2018/8/16 15:28
- * @version: V1.0
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2018/8/16 15:28
  * @Copyright ©2018 Venk. All rights reserved.
  */
 @Slf4j
@@ -50,6 +50,7 @@ public class GzipRunnable implements Runnable {
 
     /**
      * 创建进度提醒线程
+     *
      * @return
      */
     private Thread TimerStart() {
@@ -61,6 +62,7 @@ public class GzipRunnable implements Runnable {
 
     /**
      * 核心压缩过程
+     *
      * @param outPutFile
      * @throws IOException
      */

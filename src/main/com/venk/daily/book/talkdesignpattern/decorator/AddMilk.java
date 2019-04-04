@@ -4,8 +4,8 @@ package com.venk.daily.book.talkdesignpattern.decorator;
  * 加牛奶
  * 具体装饰类
  *
- * @Author: Venk[liwenkeq@sina.com]
- * @Date: 2019-04-03 17:23
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2019-04-03 17:23
  */
 public class AddMilk extends Step {
 

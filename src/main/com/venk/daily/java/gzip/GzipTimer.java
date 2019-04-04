@@ -6,11 +6,11 @@ import java.io.File;
 
 /**
  * All rights Reserved, Designed By Venk.
+ * <p>
+ * 压缩进度提醒器
  *
- * @Description: 压缩进度提醒器
- * @author: Venk[liwenkeq@sina.com]
- * @date: 2018/8/16 16:25
- * @version: V1.0
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2018/8/16 16:25
  * @Copyright ©2018 Venk. All rights reserved.
  */
 @Slf4j

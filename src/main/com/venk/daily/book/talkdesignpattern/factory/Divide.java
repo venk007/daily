@@ -2,12 +2,11 @@ package com.venk.daily.book.talkdesignpattern.factory;
 
 /**
  * All rights Reserved, Designed By Venk.
+ * <p>
+ * 简单工厂模式-除法
  *
- * @Description:简单工厂模式-除法
- * @author:Venk[liwenkeq@sina.com]
- * @date:2018/4/21 00:02
- * @version:V1.0
- * @Copyright ©2018 Venk7. All rights reserved.
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2018/4/21 00:02
  */
 public class Divide extends Algorithm {
 

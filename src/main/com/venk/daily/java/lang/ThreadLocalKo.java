@@ -11,10 +11,10 @@ import org.springframework.core.NamedInheritableThreadLocal;
  * InheritableThreadLocal变量值会自动传递给所有子线程
  * 但子线程调用set函数设置新值后，对主线程和其它子线程没有影响，只对自己可见
  *
- * @Description: ThreadLocal（线程本地变量）
- * @author: Venk[liwenkeq@sina.com]
- * @date: 2018/7/2 15:39
- * @version: V1.0
+ *  ThreadLocal（线程本地变量）
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2018/7/2 15:39
+
  * @Copyright ©2018 Venk. All rights reserved.
  * @url:https://blog.csdn.net/ni357103403/article/details/51970748 InheritableThreadLocal实现原理
  * @url:http://blog.51cto.com/stevex/1289499 InheritableThreadLocal变量的可见性

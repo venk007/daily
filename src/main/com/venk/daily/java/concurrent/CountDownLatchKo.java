@@ -14,11 +14,11 @@ import static java.util.concurrent.Executors.newFixedThreadPool;
  * 利用它可以实现类似计数器的功能。
  * 比如有一个任务A，它要等待其他4个任务执行完毕之后才能执行，
  * 此时就可以利用CountDownLatch来实现这种功能了。
+ * <p>
+ * 闭锁CountDownLatch
  *
- * @Description: 闭锁CountDownLatch
- * @author: Venk[liwenkeq@sina.com]
- * @date: 2018/6/28 14:14
- * @version: V1.0
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2018/6/28 14:14
  * @url: http://www.importnew.com/21889.html
  * @Copyright ©2018 Venk. All rights reserved.
  */

@@ -9,10 +9,10 @@ import java.util.HashSet;
 /**
  * All rights Reserved, Designed By Venk.
  *
- * @Description: stream遍历查找字符串
- * @author: Venk[liwenkeq@sina.com]
- * @date: 2018/10/31 16:32
- * @version: V1.0
+ *  stream遍历查找字符串
+ * @author Venk[liwenkeq@sina.com]
+ * @date 2018/10/31 16:32
+
  * @Copyright ©2018 Venk. All rights reserved.
  */
 @Slf4j
