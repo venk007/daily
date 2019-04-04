@@ -5,9 +5,9 @@ import org.springframework.core.NamedInheritableThreadLocal;
 
 /**
  * All rights Reserved, Designed By Venk.
- *
+ * <p>
  * ThreadLocal线程本地变量，不可传递给子线程（可用于Controller与Service解耦等）
- *
+ * <p>
  * InheritableThreadLocal变量值会自动传递给所有子线程
  * 但子线程调用set函数设置新值后，对主线程和其它子线程没有影响，只对自己可见
  *
@@ -31,17 +31,14 @@ public class ThreadLocalKo {
         namedInheritableTL.set("NamedInheritableThreadLocal");
         log.info("ThreadLocal: {}", threadLocal.get());
         log.info("NamedInheritableThreadLocal: {}", namedInheritableTL.get());
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                log.info("子线程中的ThreadLocal: {}", threadLocal.get());
-                log.info("子线程中的NamedInheritableThreadLocal: {}", namedInheritableTL.get());
-                namedInheritableTL.set("NewValue");
-                log.info("子线程中修改后的NamedInheritableThreadLocal: {}", namedInheritableTL.get());
-                log.info("NamedInheritableThreadLocal的Name: {}", namedInheritableTL.toString());
-                namedInheritableTL.remove();
-                log.info("子线程中删除后的NamedInheritableThreadLocal: {}", namedInheritableTL.get());
-            }
+        Thread t = new Thread(() -> {
+            log.info("子线程中的ThreadLocal: {}", threadLocal.get());
+            log.info("子线程中的NamedInheritableThreadLocal: {}", namedInheritableTL.get());
+            namedInheritableTL.set("NewValue");
+            log.info("子线程中修改后的NamedInheritableThreadLocal: {}", namedInheritableTL.get());
+            log.info("NamedInheritableThreadLocal的Name: {}", namedInheritableTL.toString());
+            namedInheritableTL.remove();
+            log.info("子线程中删除后的NamedInheritableThreadLocal: {}", namedInheritableTL.get());
         });
         t.start();
         Thread.sleep(10);

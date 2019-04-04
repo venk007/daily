@@ -4,8 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.HashSet;
 
 /**
  * All rights Reserved, Designed By Venk.
@@ -27,14 +26,10 @@ public class StringContainsStreamKo {
             "外婆", "哥哥", "姐姐", "妹妹", "弟弟", "大哥", "大姐",
             "二哥", "二姐", "二妹", "三哥", "三姐", "三妹", "幺", "老头"};
 
-    static List<String> FAMILY_NICK_NAME_LIST = Arrays.asList(FAMILY_NICK_NAME_ARRAY);
+    static HashSet<String> FAMILY_NICK_NAME_LIST = new HashSet<>(Arrays.asList(FAMILY_NICK_NAME_ARRAY));
 
     public static boolean isFamilyNickName(String nickname) {
-        return Objects.nonNull(nickname)
-                && (!nickname.isEmpty())
-                && FAMILY_NICK_NAME_LIST
-                .stream()
-                .anyMatch(nickname::contains);
+        return StringUtils.isNotBlank(nickname) && FAMILY_NICK_NAME_LIST.stream().anyMatch(nickname::contains);
     }
 
     public static boolean isFamilyNickNameForce(String nickname) {

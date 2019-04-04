@@ -4,7 +4,7 @@ package com.venk.daily.book.talkdesignpattern.decorator;
  * 加奶油
  * 具体装饰类
  *
- * @Author: venk[liwenke007@gmail.com]
+ * @Author: Venk[liwenkeq@sina.com]
  * @Date: 2019-04-03 17:57
  */
 public class AddCream extends Step {

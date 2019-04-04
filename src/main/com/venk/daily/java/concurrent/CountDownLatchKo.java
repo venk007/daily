@@ -51,12 +51,7 @@ public class CountDownLatchKo {
      * @param fixedThreadPool
      */
     private static void doThread(CountDownLatch latch, ExecutorService fixedThreadPool) {
-        fixedThreadPool.execute(new Runnable() {
-            @Override
-            public void run() {
-                dealSomething(latch);
-            }
-        });
+        fixedThreadPool.execute(() -> dealSomething(latch));
     }
 
     /**
